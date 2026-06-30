@@ -172,6 +172,12 @@ try {
 
     const products = await getProducts();
 
+    console.log("\n=== Battleye Products ===");
+
+for (const product of products) {
+    console.log(product.product_name);
+}
+
     const embed = buildStatusEmbed(products);
 
     if (!statusMessage) {
