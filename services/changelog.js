@@ -1,0 +1,5 @@
+sendStatusUpdate(
+    product,
+    oldStatus,
+    newStatus
+)
