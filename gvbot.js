@@ -1,4 +1,4 @@
-const database = require("./database/database");
+const db = require("./database/database");
 const fs = require("fs");
 require("dotenv").config();
 
@@ -218,7 +218,7 @@ try {
 
 }
 
-client.once("ready", async () => {
+client.once("clientReady", async () => {
 
 
 console.log(`Logged in as ${client.user.tag}`);

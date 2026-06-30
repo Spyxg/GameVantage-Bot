@@ -1,7 +1,9 @@
 const Database = require("better-sqlite3");
 
+// Create (or open) the database
 const db = new Database("./database/status.db");
 
+// Create the products table
 db.exec(`
 CREATE TABLE IF NOT EXISTS products (
     product TEXT PRIMARY KEY,
@@ -11,45 +13,6 @@ CREATE TABLE IF NOT EXISTS products (
 );
 `);
 
-console.log("✅ SQLite database initialized.");
+console.log("✅ SQLite initialized.");
 
-function getProduct(product) {
-    return db
-        .prepare("SELECT * FROM products WHERE product = ?")
-        .get(product);
-}
-
-function getAllProducts() {
-    return db
-        .prepare("SELECT * FROM products")
-        .all();
-}
-
-function setProductStatus(product, status, source) {
-
-    const now = Date.now();
-
-    db.prepare(`
-        INSERT INTO products
-        (product, status, source, last_changed)
-        VALUES (?, ?, ?, ?)
-
-        ON CONFLICT(product)
-        DO UPDATE SET
-            status = excluded.status,
-            source = excluded.source,
-            last_changed = excluded.last_changed
-    `).run(
-        product,
-        status,
-        source,
-        now
-    );
-
-}
-
-module.exports = {
-    getProduct,
-    getAllProducts,
-    setProductStatus
-};
+module.exports = db;
