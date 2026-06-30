@@ -31,7 +31,7 @@ const ALLOWED_PRODUCTS = [
 
 const PRODUCT_NAME_MAP = {
 "Apex Legends External": "APEX LEGENDS: FULL",
-"ARC Raiders External": "ARC RAIDERS: FULL",
+"ARC Raiders Internal": "ARC RAIDERS: FULL",
 "Arena Breakout Infinite Internal": "ABI: FULL",
 "Delta Force Internal": "DELTA FORCE: FULL",
 "Fortnite External": "FORTNITE: FULL",
