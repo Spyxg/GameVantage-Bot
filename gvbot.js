@@ -19,7 +19,7 @@ intents: [GatewayIntentBits.Guilds]
 
 const ALLOWED_PRODUCTS = [
 "Apex Legends External",
-"ARC Raiders External",
+"ARC Raiders Internal",
 "Arena Breakout Infinite Internal",
 "Delta Force Internal",
 "Fortnite External",
